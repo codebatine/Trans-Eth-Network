@@ -1,0 +1,190 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(7deg, #febdab 0%, #f8b9a9 25%, #a56274 60%, #3c4459 80%, #3c4459 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+header {
+  width: 100vw;
+  height: 9rem;
+  background-color: rgba(233, 200, 184, 0.2);
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font: 300 3rem "Red Hat Display", sans-serif;
+  color: #fdfdfd;
+}
+
+ul {
+  list-style-type: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.eth-box {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 1rem;
+}
+.eth-box .balance-display {
+  font: 400 1.2rem "Red Hat Display", sans-serif;
+  margin-left: 1rem;
+}
+.eth-box .input-field {
+  font: 300 1rem "Red Hat Display", sans-serif;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.eth-box .action-button {
+  font: 400 1.2rem "Red Hat Display", sans-serif;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: #111;
+  color: #aaa;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.eth-box .action-button:hover {
+  background-color: #494949;
+}
+
+.stars, .moon, .eth, .base {
+  position: absolute;
+  z-index: -1;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20em;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 1px, transparent 2px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px), radial-gradient(white, rgba(255, 255, 255, 0.1) 1px, transparent 2px);
+  background-size: 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.moon {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 150em;
+  height: 150em;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(221deg, rgb(233, 200, 184) 0%, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0) 100%);
+}
+
+.eth {
+  position: absolute;
+  left: calc(50% - 5em);
+  top: calc(20% - 4em);
+  width: 10em;
+  height: 10em;
+  font-size: 0.8em;
+}
+.eth .top, .eth .bottom {
+  width: 10em;
+  height: 10em;
+  background: rgba(248, 185, 167, 0.91);
+  transform: rotateX(65deg) rotateZ(45deg);
+  transform-style: preserve-3d;
+  position: absolute;
+  animation: rotate 7s linear infinite;
+}
+.eth .top .left, .eth .top .right, .eth .top .up, .eth .top .down, .eth .bottom .left, .eth .bottom .right, .eth .bottom .up, .eth .bottom .down {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.eth .top .left, .eth .top .right, .eth .bottom .left, .eth .bottom .right {
+  border-left: 5em solid transparent;
+  border-right: 5em solid transparent;
+  border-bottom: 15em solid rgba(253, 216, 190, 0.5);
+  transform-origin: bottom;
+}
+.eth .top .up, .eth .top .down, .eth .bottom .up, .eth .bottom .down {
+  transform-origin: bottom right;
+  border-top: 5em solid transparent;
+  border-right: 15em solid rgba(254, 188, 166, 0.4);
+  border-bottom: 5em solid transparent;
+  border-left: none;
+  top: 0em;
+}
+.eth .top .left, .eth .bottom .left {
+  left: 0;
+  top: -5em;
+  transform: rotateX(-70deg);
+}
+.eth .top .right, .eth .bottom .right {
+  transform: rotateX(-110deg);
+  left: 0em;
+  top: -15em;
+}
+.eth .top .up, .eth .bottom .up {
+  transform: rotateY(70deg);
+  left: -5em;
+}
+.eth .top .down, .eth .bottom .down {
+  transform: rotateY(110deg);
+  left: -15em;
+}
+.eth .top {
+  left: 0;
+  top: 0;
+}
+.eth .bottom {
+  left: 0;
+  top: 1.5em;
+  background: rgba(208, 161, 152, 0.79);
+}
+.eth .bottom .left, .eth .bottom .right {
+  border-bottom: 15em solid rgba(248, 185, 167, 0.91);
+}
+.eth .bottom .up, .eth .bottom .down {
+  border-right: 15em solid rgba(248, 200, 167, 0.55);
+}
+.eth .bottom .left {
+  transform: rotateX(70deg);
+}
+.eth .bottom .right {
+  transform: rotateX(110deg);
+}
+.eth .bottom .up {
+  transform: rotateY(-70deg);
+}
+.eth .bottom .down {
+  transform: rotateY(-110deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(65deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}

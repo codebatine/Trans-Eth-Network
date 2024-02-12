@@ -1,0 +1,118 @@
+.stars, .moon, .eth, .base {
+  position: absolute;
+  z-index: -1;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20em;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 1px, transparent 2px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px), radial-gradient(white, rgba(255, 255, 255, 0.1) 1px, transparent 2px);
+  background-size: 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.moon {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 150em;
+  height: 150em;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(221deg, rgb(233, 200, 184) 0%, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0) 100%);
+}
+
+.eth {
+  position: absolute;
+  left: calc(50% - 5em);
+  top: calc(20% - 4em);
+  width: 10em;
+  height: 10em;
+  font-size: 0.8em;
+}
+.eth .top, .eth .bottom {
+  width: 10em;
+  height: 10em;
+  background: rgba(248, 185, 167, 0.91);
+  transform: rotateX(65deg) rotateZ(45deg);
+  transform-style: preserve-3d;
+  position: absolute;
+  animation: rotate 7s linear infinite;
+}
+.eth .top .left, .eth .top .right, .eth .top .up, .eth .top .down, .eth .bottom .left, .eth .bottom .right, .eth .bottom .up, .eth .bottom .down {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.eth .top .left, .eth .top .right, .eth .bottom .left, .eth .bottom .right {
+  border-left: 5em solid transparent;
+  border-right: 5em solid transparent;
+  border-bottom: 15em solid rgba(253, 216, 190, 0.5);
+  transform-origin: bottom;
+}
+.eth .top .up, .eth .top .down, .eth .bottom .up, .eth .bottom .down {
+  transform-origin: bottom right;
+  border-top: 5em solid transparent;
+  border-right: 15em solid rgba(254, 188, 166, 0.4);
+  border-bottom: 5em solid transparent;
+  border-left: none;
+  top: 0em;
+}
+.eth .top .left, .eth .bottom .left {
+  left: 0;
+  top: -5em;
+  transform: rotateX(-70deg);
+}
+.eth .top .right, .eth .bottom .right {
+  transform: rotateX(-110deg);
+  left: 0em;
+  top: -15em;
+}
+.eth .top .up, .eth .bottom .up {
+  transform: rotateY(70deg);
+  left: -5em;
+}
+.eth .top .down, .eth .bottom .down {
+  transform: rotateY(110deg);
+  left: -15em;
+}
+.eth .top {
+  left: 0;
+  top: 0;
+}
+.eth .bottom {
+  left: 0;
+  top: 1.5em;
+  background: rgba(208, 161, 152, 0.79);
+}
+.eth .bottom .left, .eth .bottom .right {
+  border-bottom: 15em solid rgba(248, 185, 167, 0.91);
+}
+.eth .bottom .up, .eth .bottom .down {
+  border-right: 15em solid rgba(248, 200, 167, 0.55);
+}
+.eth .bottom .left {
+  transform: rotateX(70deg);
+}
+.eth .bottom .right {
+  transform: rotateX(110deg);
+}
+.eth .bottom .up {
+  transform: rotateY(-70deg);
+}
+.eth .bottom .down {
+  transform: rotateY(-110deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(65deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
