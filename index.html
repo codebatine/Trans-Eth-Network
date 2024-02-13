@@ -11,8 +11,12 @@
   <link rel="stylesheet" href="./content/css/style.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.5.0/web3.min.js"
+    integrity="sha512-FhAl50BpK3gf9K//lbAWek9EEQEtGQyyXZNc1fuwcC2tVf2cskiJBcumXY0zJksYtms6S5cqubp1MNfUYTkO2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
+  <script type="module" src="./script/app.js" defer></script>
   <title>Trans Eth Network</title>
 </head>
 
@@ -40,6 +44,7 @@
   </div>
 
   <div class="eth-box">
+    <button class="action-button" id="connect-mm">Connect Wallet</button>
     <input type="text" class="input-field" id="account" placeholder="From">
     <button class="action-button" id="checkBalance">Balance</button>
     <div class="balance-display">...ETH</div>
@@ -47,6 +52,10 @@
     <input type="text" class="input-field" id="amount" placeholder="Amount">
     <input type="text" class="input-field" id="toAccount" placeholder="To">
     <button class="action-button" id="sendTrx">Send</button>
+  </div>
+
+  <div class="trx-box">
+    <div id="transactions"></div>
   </div>
 
 </body>

@@ -4,6 +4,7 @@ html, body {
 body {
   background-image: linear-gradient(7deg, #febdab 0%, #f8b9a9 25%, #a56274 60%, #3c4459 80%, #3c4459 100%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -29,6 +30,11 @@ h1 {
   color: #fdfdfd;
 }
 
+h2 {
+  font: 300 2rem 'Red Hat Display', sans-serif;
+  color: #000
+}
+
 ul {
   list-style-type: none;
 }
@@ -45,18 +51,59 @@ ul {
   padding: 1rem;
   border: 1px solid #1a1a1a;
   border-radius: 1rem;
+}
 
-  .balance-display {
-    font: 400 1.2rem 'Red Hat Display', sans-serif;
-    margin-left: 1rem;
-  }
+.eth-box .balance-display {
+  font: 400 1.2rem 'Red Hat Display', sans-serif;
+  margin-left: 1rem;
+}
 
-  .input-field {
-    font: 300 1rem 'Red Hat Display', sans-serif;
-    width: 100%;
-    border-radius: 1rem;
-    padding: 1rem;
+.eth-box .input-field {
+  font: 300 1rem 'Red Hat Display', sans-serif;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.eth-box > div {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    flex: 1;
+    text-align: center;
   }
+}
+
+.trx-box {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.trx-box .balance-display {
+  font: 400 1.2rem 'Red Hat Display', sans-serif;
+  margin-left: 1rem;
+}
+
+.trx-box .input-field {
+  font: 300 1rem 'Red Hat Display', sans-serif;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.trx-box > div {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+}
 
   .action-button {
     font: 400 1.2rem 'Red Hat Display', sans-serif;
@@ -72,6 +119,23 @@ ul {
       background-color: #494949;
     }
   }
-}
+
+  #transactions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .transaction {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .transaction > div {
+    font: 400 1.2rem 'Red Hat Display', sans-serif;
+    margin-left: 1rem;
+  }
 
 @import './eth.scss';
