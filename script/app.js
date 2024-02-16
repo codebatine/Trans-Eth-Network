@@ -61,17 +61,40 @@ function createTransactionList(transaction) {
   document.getElementById('transactions').appendChild(transactionDiv);
 }
 
+// async function sendTransaction() {
+//   const toAddress = toAccountInput.value;
+//   const amount = valueInput.value;
+
+//   try {
+//     await rpc.eth.sendTransaction({
+//       from: account,
+//       to: toAddress,
+//       value: rpc.utils.toWei(amount, 'ether'),
+//     });
+//   } catch (error) {}
+// }
+
 async function sendTransaction() {
   const toAddress = toAccountInput.value;
-  const amount = valueInput.value;
+  const amount = parseFloat(valueInput.value) * Math.pow(10, 18);
 
   try {
-    await rpc.eth.sendTransaction({
-      from: account,
-      to: toAddress,
-      value: rpc.utils.toWei(amount, 'ether'),
+    let params = [
+      {
+        from: account,
+        to: toAddress,
+        value: Number(amount).toString(16),
+        gas: Number(21000).toString(16),
+        gasPrice: Number(2500000).toString(16),
+      },
+    ];
+    const response = await ethereum.request({
+      method: 'eth_sendTransaction',
+      params: params,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
