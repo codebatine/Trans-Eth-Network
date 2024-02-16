@@ -3,6 +3,7 @@ import { connectButton } from './mm.js';
 const accountInput = document.querySelector('#account');
 const checkBalanceButton = document.querySelector('#checkBalance');
 const displayBalance = document.querySelector('#balance');
+const displayBlockNumber = document.querySelector('#blockNumber');
 
 const toAccountInput = document.querySelector('#toAccount');
 const valueInput = document.querySelector('#amount');
@@ -23,6 +24,9 @@ async function checkBalance() {
 
   const balance = await rpc.eth.getBalance(account);
   displayBalance.textContent = rpc.utils.fromWei(balance, 'ether');
+
+  const blockNumber = await rpc.eth.getBlockNumber();
+  displayBlockNumber.textContent = `Block number: ${blockNumber}`;
 
   const block = await rpc.eth.getBlock('latest');
   if (block !== null && block.transactions !== null) {
@@ -60,19 +64,6 @@ function createTransactionList(transaction) {
 
   document.getElementById('transactions').appendChild(transactionDiv);
 }
-
-// async function sendTransaction() {
-//   const toAddress = toAccountInput.value;
-//   const amount = valueInput.value;
-
-//   try {
-//     await rpc.eth.sendTransaction({
-//       from: account,
-//       to: toAddress,
-//       value: rpc.utils.toWei(amount, 'ether'),
-//     });
-//   } catch (error) {}
-// }
 
 async function sendTransaction() {
   const toAddress = toAccountInput.value;
