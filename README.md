@@ -1,10 +1,6 @@
 # Trans Eth Network
 
-An Ethereum app for checking balance, making transactions and seeing block height. Expected to be complete within a week, around Feb 23...
-
-## Installation
-
-Coming within a week... :hourglass_flowing_sand:
+An Ethereum app for checking balance, making transactions and seeing block height. Using Web3 to check balance, see latest transaction history and using MetaMask to make transactions.
 
 ## Screenshot
 

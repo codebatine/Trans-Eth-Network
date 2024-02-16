@@ -11,5 +11,3 @@ export async function connect() {
 }
 
 connectButton.addEventListener('click', connect);
-
-/// 0xA0127d4E11078e180675865B93Ff5C3478318B3d
