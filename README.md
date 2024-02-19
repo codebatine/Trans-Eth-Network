@@ -1,6 +1,11 @@
 # Trans Eth Network
 
-An Ethereum app for checking balance, making transactions and seeing block height. Using Web3 to check balance, see latest transaction history and using MetaMask to make transactions.
+An Ethereum (on Sepolia testnet) app for checking balance, making transactions and seeing block height. Using Web3 to check balance and displaying transaction after sending. Connecting to MetaMask is done to make the actual transactions.
+
+## Requirment
+
+MetaMask
+Ethereum Sepolia
 
 ## Screenshot
 
