@@ -5,7 +5,14 @@ An Ethereum (on Sepolia testnet) app for checking balance, making transactions a
 ## Requirment
 
 MetaMask
-Ethereum Sepolia
+
+Ethereum
+
+Sepolia
+
+Node.js
+
+Vitest for the TDD
 
 ## Screenshot
 
